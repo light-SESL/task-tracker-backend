@@ -1,7 +1,26 @@
-import { Router } from 'express';
+import { Router } from "express";
+import { celebrate, Joi, Segments } from "celebrate";
 import UsersController from "../../controllers/users";
 const router = Router();
 
-router.get('/create', UsersController.registerUser);
+router.post(
+  "/",
+  celebrate({
+    [Segments.BODY]: Joi.object().keys({
+      username: Joi.string().required(),
+    }),
+  }),
+  UsersController.registerUser
+);
+
+router.post(
+  "/login",
+  celebrate({
+    [Segments.BODY]: Joi.object().keys({
+      username: Joi.string().required(),
+    }),
+  }),
+  UsersController.loginUser
+);
 
 export default router;
