@@ -18,6 +18,7 @@
   "dependencies": {
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
+    "bcrypt": "^5.1.0",
     "celebrate": "^15.0.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -47,4 +48,3 @@
     "prettier": "^2.8.3"
   }
 }
-

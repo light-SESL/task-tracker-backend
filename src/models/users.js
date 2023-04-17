@@ -1,12 +1,16 @@
 import mongoose from "mongoose";
 
 let userElements = {
+  userId: {
+    type: String,
+    required: true,
+  },
   username: {
     type: String,
     unique: true,
     required: true,
   },
-  userId: {
+  password: {
     type: String,
     required: true,
   },
