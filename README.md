@@ -8,3 +8,4 @@
 # Run the app
 - Run `npm i` or `yarn` to install packages
 - Run the app with `yarn dev`  or `npm run dev`
+- Run `yarn lint-fix` or `npm run lint-fix` to run the linter
