@@ -1,12 +1,15 @@
 import express from "express";
+import passport from "passport";
 import connect from "./db/db";
 import cors from "cors";
 import { errors } from "celebrate";
 import router from "./routes";
+import { applyPassportStrategy } from "./utils/passport";
 
 const app = express();
 app.use(cors());
 connect();
+applyPassportStrategy(passport);
 app.use(express.json());
 app.use(router);
 
