@@ -12,6 +12,16 @@ class TasksController {
     });
   }
 
+  static async getTask(req,res){
+    await decodeToken(req);
+    const { id } = req.params;
+    const task = await Tasks.findOne({_id: id})
+    return res.status(200).json({
+      task
+    })
+
+  }
+
   static async createTask(req, res) {
     const { username } = await decodeToken(req);
     const { title, description, status, dueDate } = req.body;

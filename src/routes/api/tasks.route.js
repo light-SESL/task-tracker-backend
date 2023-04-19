@@ -7,9 +7,16 @@ const router = Router();
 
 router.get(
   "/",
-  // passport.authenticate("jwt", { session: false }, null),
+  passport.authenticate("jwt", { session: false }, null),
   TasksController.getAllUserTasks
 );
+
+router.get(
+    "/:id",
+    passport.authenticate("jwt", { session: false }, null),
+    TasksController.getTask
+);
+
 
 router.post(
   "/",
