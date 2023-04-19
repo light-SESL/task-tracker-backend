@@ -7,7 +7,7 @@ const router = Router();
 
 router.get(
   "/",
-  passport.authenticate("jwt", { session: false }, null),
+  // passport.authenticate("jwt", { session: false }, null),
   TasksController.getAllUserTasks
 );
 
@@ -19,7 +19,6 @@ router.post(
       title: Joi.string().required(),
       description: Joi.string().required(),
       status: Joi.string().required(),
-      priority: Joi.string().required(),
       dueDate: Joi.string().required(),
     }),
   }),
@@ -34,7 +33,6 @@ router.put(
       title: Joi.string().optional(),
       description: Joi.string().optional(),
       status: Joi.string().optional(),
-      priority: Joi.string().optional(),
       dueDate: Joi.string().optional(),
     }),
   }),
