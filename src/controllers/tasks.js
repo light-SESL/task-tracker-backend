@@ -14,13 +14,12 @@ class TasksController {
 
   static async createTask(req, res) {
     const { username } = await decodeToken(req);
-    const { title, description, status, priority, dueDate } = req.body;
+    const { title, description, status, dueDate } = req.body;
 
     const createdTask = await Tasks.create({
       title,
       description,
       status,
-      priority,
       dueDate,
       username,
     });
